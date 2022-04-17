@@ -83,8 +83,8 @@ exports.run = function () {
   })
 
   async function startServer () {
-    const openToTheWord = await plugin.nvim.getVar('mkdp_open_to_the_world')
-    const host = openToTheWord ? '0.0.0.0' : '127.0.0.1'
+    const openToTheWorld = await plugin.nvim.getVar('mkdp_open_to_the_world')
+    const host = openToTheWorld ? '0.0.0.0' : '127.0.0.1'
     let port = await plugin.nvim.getVar('mkdp_port')
     port = port || (8080 + Number(`${Date.now()}`.slice(-3)))
     server.listen({
@@ -123,7 +123,7 @@ exports.run = function () {
       }
       async function openBrowser ({ bufnr }) {
         const openIp = await plugin.nvim.getVar('mkdp_open_ip')
-        const openHost = openIp !== '' ? openIp : (openToTheWord ? getIP() : '127.0.0.1')
+        const openHost = openIp !== '' ? openIp : (openToTheWorld ? getIP() : '127.0.0.1')
         const url = `http://${openHost}:${port}/page/${bufnr}`
         const browserfunc = await plugin.nvim.getVar('mkdp_browserfunc')
         if (browserfunc !== '') {
