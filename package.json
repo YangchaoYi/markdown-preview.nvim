@@ -25,6 +25,7 @@
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-toc-done-right": "^4.0.1",
     "md-it-meta": "^0.0.2",
+    "msgpack-lite": "^0.1.26",
     "neovim": "^4.2.1",
     "next": "^7.0.2",
     "next-routes": "^1.4.2",
@@ -32,7 +33,7 @@
     "react-dom": "^16.5.2",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
-    "msgpack-lite": "^0.1.26"
+    "sync-fetch": "^0.3.1"
   },
   "devDependencies": {
     "@types/node": "^10.11.7",
