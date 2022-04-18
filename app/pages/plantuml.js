@@ -1,10 +1,6 @@
-import fs from 'fs';
-
 const deflate = require('markdown-it-plantuml/lib/deflate')
-const myConsole = new console.Console(fs.createWriteStream('/home/yangchao/mkdp_ycyi.log'));
 
 function generateSourceDefault (umlCode, pluginOptions) {
-  myConsole.log("ycyi generateSourceDefault ");
   var imageFormat = pluginOptions.imageFormat || 'svg'
   var diagramName = pluginOptions.diagramName || 'uml'
   var server = pluginOptions.server || 'https://www.plantuml.com/plantuml'
@@ -20,7 +16,6 @@ function generateSourceDefault (umlCode, pluginOptions) {
 }
 
 export default (md, opts = {}) => {
-  myConsole.log("ycyi render plantuml");
   const temp = md.renderer.rules.fence.bind(md.renderer.rules)
   md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
     const token = tokens[idx]
